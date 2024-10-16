@@ -9,10 +9,32 @@ body{
   background: #ebe9e9;
 }
 
+::-webkit-scrollbar{
+  width: 5px !important;
+}
+
+::-webkit-scrollbar-thumb{
+  background: #0858f7 !important;
+}
+
+::-webkit-scrollbar-track{
+  background: transparent !important;
+}
+
+.btn-blue{
+  background: #0858f7  !important;
+  font-size: 14px !important;
+  font-weight: 600;
+  color: #fff !important;
+  text-transform: capitalize !important;
+
+}
+
+
 header{
   width: 100%;
   height: 70px;
-  background: #fff;
+  background: #ffffff;
 }
 
 header .logo img{
@@ -99,10 +121,12 @@ header button.rounded-circle svg {
   color: #000 !important;
 }
 
-.myAcc .userImg {
+
+
+.userImg {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: left;
   overflow: hidden;
   width: 40px; /* Reduce the size */
   height: 40px; /* Ensure the height matches the width */
@@ -111,7 +135,7 @@ header button.rounded-circle svg {
   border-radius: 100%; /* Creates a circular border */
 }
 
-.myAcc .userImg .rounded-circle {
+.userImg .rounded-circle {
   width: 100%;
   height: 100%;
   display: flex;
@@ -121,7 +145,7 @@ header button.rounded-circle svg {
   overflow: hidden;
 }
 
-.myAcc .userImg .rounded-circle img {
+.userImg .rounded-circle img {
   width: 100%;
   
   object-fit: cover; /* Ensures the image does not distort */
@@ -150,6 +174,7 @@ header button.rounded-circle svg {
 #account-menu li{
   font-size: 14px !important;
   padding: 12px 15px !important;
+  width: 215px;
 }
 
 #account-menu li svg{
@@ -157,6 +182,85 @@ header button.rounded-circle svg {
 }
 
 
+#notifications li{
+  font-size: 14px !important;
+  padding: 12px 15px !important;
+  width: 290px;
+}
 
+.dropdown-list .head {
+  padding-left: 10px 0px;
+}
+
+.dropdown-list  h4{
+  font-weight: 600;
+  font-size: 17px;
+  padding-left: 7px;
+  padding-bottom: 0px;
+  padding-top: 10px ;
+
+}
+
+.dropdownInfo{
+  padding-left: 15px;
+}
+.dropdownInfo h4{
+    font-size: 13px;
+    font-weight: 500;
+    white-space: break-spaces;
+    line-height: 21px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding: 0px;
+    
+}
+
+.dropdownInfo h4 b{
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+.dropdownInfo p {
+  font-size: 12px;
+  font-weight: 500 ;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.text-sky{
+  color: #0858f7 !important;
+}
+
+
+
+.dropdown-list li{
+  padding-bottom: 2px;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+
+.dropdown-list li.MuiButtonBase-root{
+  background: #ebf6ff !important;
+  color: #000  !important;
+  margin: 1px;
+  border-radius: 6px;
+  
+}
+
+.dropdown-list li.MuiButtonBase-root:hover{
+  background: #e2e8ed !important;
+}
+
+
+.dropdown-list .scroll{
+  max-height: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+button .btn-blue{
+  padding-top: 2px;
+}
 
 

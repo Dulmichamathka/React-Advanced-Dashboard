@@ -16,7 +16,7 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import PersonAdd from '@mui/icons-material/PersonAdd';
-import Settings from '@mui/icons-material/Settings';
+import Divider from '@mui/material/Divider';
 import Logout from '@mui/icons-material/Logout';
 import { FaShieldAlt } from "react-icons/fa";
 
@@ -26,13 +26,26 @@ import { FaShieldAlt } from "react-icons/fa";
 const Header = () => {
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  const [isOpennotificationDrop, setisOpennotificationDrop] = useState(null);
+  const openMyAcc = Boolean(anchorEl);
+  const openNotifications = Boolean(isOpennotificationDrop);
+
   const handleOpenMyAccDrop = (event) => {
     setAnchorEl(event.currentTarget);
   };
   const handleCloseMyAccDrop = () => {
     setAnchorEl(null);
   };
+
+  const handleOpennotificationsDrop = (event) => {
+    setisOpennotificationDrop(event.currentTarget);
+  };
+
+  const handleClosenotificationsDrop = () =>{
+    setisOpennotificationDrop(false)
+  }
+
+
 
 
   return (
@@ -61,15 +74,312 @@ const Header = () => {
 
                   <Button className="rounded-circle me-3" ><MdOutlineShoppingCart/></Button>
                   <Button className="rounded-circle me-3" ><MdOutlineEmail/></Button>
-                  <Button className="rounded-circle me-3" ><FaRegBell/></Button>
+                  
+
+            <div className="dropdownWrapper position-relative">
+              <Button className="rounded-circle me-3" 
+                    onClick={handleOpennotificationsDrop}><FaRegBell/></Button>
+                    <Menu
+                            anchorEl={isOpennotificationDrop}
+                            className="notifications dropdown-list"
+                            id="notifications"
+                            open={openNotifications}
+                            onClose={handleClosenotificationsDrop}
+                            onClick={handleClosenotificationsDrop}
+                            slotProps={{
+                              paper: {
+                                elevation: 0,
+                                sx: {
+                                  overflow: 'visible',
+                                  filter: 'drop-shadow(0px 2px 8px rgba(0,0,0,0.32))',
+                                  mt: 1.5,
+                                  '& .MuiAvatar-root': {
+                                    width: 32,
+                                    height: 32,
+                                    ml: -0.5,
+                                    mr: 1,
+                                  },
+                                  '&::before': {
+                                    content: '""',
+                                    display: 'block',
+                                    position: 'absolute',
+                                    top: 0,
+                                    right: 14,
+                                    width: 10,
+                                    height: 10,
+                                    bgcolor: 'background.paper',
+                                    transform: 'translateY(-50%) rotate(45deg)',
+                                    zIndex: 0,
+                                  },
+                                },
+                              },
+                            }}
+                            transformOrigin={{ horizontal: 'right', vertical: 'top' }}
+                            anchorOrigin={{ horizontal: 'right', vertical: 'bottom' }}
+                          >
+                            <div className="head ">
+                              <h4>Notifications</h4>
+                            </div>
+                          
+                       <div className="scroll">
+                       <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+                            
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+
+
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+
+
+                            <MenuItem onClick={handleClosenotificationsDrop}>
+                              <div className=" d-flex align-items-center ">
+                              <div>
+                                    <div className="userImg">
+                                          <span className="rounded-circle">
+                                                  <img src={profile} alt="" />
+                                            </span>  
+                                      </div>
+                              </div> 
+
+                                <div className="dropdownInfo">
+                                  <h4><span>
+                                    <b>Niluka </b>added to her favourite list 
+                                    <b> accepted your request</b>
+                                  </span></h4>
+
+                                  <p className="text-sky">
+                                    few second ago
+                                  </p>
+                                
+
+                                </div>
+                                    
+                              </div>
+                            </MenuItem>
+                       </div>
+
+                      <div className="button px-2 pt-1  w-100">
+                          <Button className="btn-blue w-100">
+                                  View all notifications
+                          </Button>
+                      </div>
+
+                    </Menu>
+
+
+             
+            </div>
+
 
 
             <div className="myAccWrapper">
                   <Button className="myAcc d-flex align-items-center " onClick={handleOpenMyAccDrop}>
-                    <div className="userImg">
-                      <span className="rounded-circle">
-                          <img src={profile} alt="Profile" />
-                      </span>
+                    <div>
+                        <div className="userImg">
+                          <span className="rounded-circle">
+                              <img src={profile} alt="Profile" />
+                          </span>
+                        </div>
                     </div>
 
                  <div className="userInfo">
@@ -81,8 +391,9 @@ const Header = () => {
 
                <Menu
                           anchorEl={anchorEl}
+                          className="MyAcc"
                           id="account-menu"
-                          open={open}
+                          open={openMyAcc}
                           onClose={handleCloseMyAccDrop}
                           onClick={handleCloseMyAccDrop}
                           slotProps={{
@@ -135,6 +446,7 @@ const Header = () => {
                             </ListItemIcon>
                             Logout
                           </MenuItem>
+
                   </Menu>
 
 
