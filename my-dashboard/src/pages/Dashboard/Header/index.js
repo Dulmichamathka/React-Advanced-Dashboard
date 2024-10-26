@@ -32,8 +32,6 @@ const Header = () => {
   const openMyAcc = Boolean(anchorEl);
   const openNotifications = Boolean(isOpennotificationDrop);
 
-  const [isLogin,setIsLogin] = useState(true)
-
   const context = useContext(MyContext);
 
   const handleOpenMyAccDrop = (event) => {
@@ -379,11 +377,14 @@ const Header = () => {
             </div>
 
             {
-              isLogin === true ? <Button className="btn-blue btn-lg btn-round"> Sign In </Button> 
+              context.isLogin === true ? 
+              <Link to = {'/login'}>
+                <Button className="btn-blue btn-lg btn-round"> Sign In </Button>
+              </Link> 
               :
 
               <div className="myAccWrapper">
-                  <Button className="myAcc d-flex align-items-center " onClick={handleOpenMyAccDrop}>
+                 <Button className="myAcc d-flex align-items-center " onClick={handleOpenMyAccDrop}>
                     <div>
                         <div className="userImg">
                           <span className="rounded-circle">

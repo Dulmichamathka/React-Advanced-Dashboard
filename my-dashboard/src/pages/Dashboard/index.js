@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
 import DashboardBox from './components/dashboardBox';
 import { FaCircleUser } from "react-icons/fa6";
 import { IoMdCart } from "react-icons/io";
@@ -26,6 +26,7 @@ import skirt from "../../assets/images/skirt.jpg";
 import blouse from "../../assets/images/blouse.png";
 import blousejacket from "../../assets/images/blousejacket.png";
 import Pagination from '@mui/material/Pagination';
+import { MyContext } from '../../App';
 
 export const data = [
   ["Year", "Sales", "Expenses"],
@@ -49,6 +50,16 @@ const Dashboard = () => {
     const [showBy, setShowBy] = useState('');
     const [catBy, setCatBy] = useState('');
     const open = Boolean(anchorEl);
+
+    const context =useContext(MyContext);
+
+    useEffect (() =>{
+        context.setIsHideSidebarAndHeader(false);
+        window.scrollTo(0,0);
+        
+    },[])
+
+
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
     };
