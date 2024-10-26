@@ -10,6 +10,10 @@ body{
   overflow-x: hidden;
 }
 
+body.dark{
+  background: #071739 !important;
+}
+
 ::-webkit-scrollbar{
   width: 5px !important;
 }
@@ -88,6 +92,10 @@ header{
   backdrop-filter: blur(5px);
 }
 
+body.dark header{
+  background: #112143 !important;
+}
+
 header .logo img{
   width: 45px;
 }
@@ -107,6 +115,11 @@ header .logo span{
   font-size: 30px;
 }
 
+body.dark header .logo span{
+  color: #fff !important;
+  opacity: 0.9;
+}
+
 header .logo{
   text-decoration: none;
   
@@ -119,6 +132,14 @@ header button.rounded-circle{
   background: #f0f5ff !important;
   color: #0858f7;
   
+}
+
+body.dark header button.rounded-circle {
+  background: #142956 !important;
+}
+
+body.dark header button.rounded-circle svg{
+  color: #fff ;
 }
 
 header button.rounded-circle:hover svg{
@@ -146,6 +167,10 @@ header .part2{
   
 }
 
+body.dark .searchBox{
+  background: #12254e;
+}
+
 .searchBox input{
   background: transparent;
   border: 0px;
@@ -155,13 +180,16 @@ header .part2{
   color: #292929 ;
 }
 
+body.dark .searchBox input , 
+body.dark .searchBox input::-webkit-input-placeholder ,
+body.dark .searchBox svg{
+  color:rgba(255, 255, 255, 0.7) ;
+}
 
 .searchBox svg{
   font-size: 18px;
   color: #292929;
 }
-
-
 
 .searchBox svg:hover{
   color: rgb(52, 52, 255);
@@ -176,8 +204,6 @@ header .part2{
   text-align: left !important;
   color: #000 !important;
 }
-
-
 
 .userImg {
   display: flex;
@@ -210,6 +236,19 @@ header .part2{
 
 .myAcc .userInfo{
   padding-left: 10px;
+}
+
+body.dark .myAcc .userInfo *{
+  color: rgba(255, 255, 255,  0.8) !important;
+}
+
+body.dark .MuiPaper-elevation{
+  background-color: #12254e !important;
+}
+
+body.dark .MuiPaper-elevation li *,
+body.dark .MuiPaper-elevation li{
+  color: rgba(255, 255, 255, 0.8) !important ;
 }
 
 .myAcc .userInfo h4{
@@ -248,13 +287,17 @@ header .part2{
   padding-left: 10px 0px;
 }
 
-.dropdown-list  h4{
+.dropdown-list h4{
   font-weight: 600;
   font-size: 17px;
   padding-left: 7px;
   padding-bottom: 0px;
   padding-top: 10px ;
 
+}
+
+body.dark .dropdown-list h4{
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .dropdownInfo{
@@ -304,6 +347,11 @@ header .part2{
   
 }
 
+body.dark .dropdown-list li.MuiButtonBase-root{
+  background-color: #12254e !important;
+  background: #12254e !important;
+}
+
 .dropdown-list li.MuiButtonBase-root:hover{
   background: #e2e8ed !important;
 }
@@ -347,6 +395,9 @@ button .btn-blue{
   transition:  all 0.3s ease-in-out;
 }
 
+body.dark .main .sidebarWrapper .sidebar{
+  background: #112143 !important;
+}
 
 .main .sidebarWrapper.toggle .sidebar{
   left: -100%;
@@ -389,17 +440,29 @@ button .btn-blue{
   text-transform: capitalize !important;
   font-weight: 600 !important;
   font-family: "open Sans",sans-serif !important;
-  font-size: 15px !important;
-  
+  font-size: 15px !important;  
+}
+
+
+body.dark .main .sidebarWrapper .sidebar ul li button{
+  color: rgba(255, 255, 255,  0.8) !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button *{
   color: #5e5d72 !important;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul li button *{
+  color: #f1f1f1 !important;
+}
+
+
 .main .sidebarWrapper .sidebar ul li button:hover{
   background-color: #f1f1f1 ;
 }
+
+
+
 
 .main .sidebarWrapper .sidebar ul li button .icon {
   display: flex;
@@ -414,6 +477,10 @@ button .btn-blue{
 .main .sidebarWrapper .sidebar ul li button .icon svg{
   font-size: 22px;
 
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button .icon svg{
+  color: #f1f1f1 !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button .arrow{
@@ -432,8 +499,16 @@ button .btn-blue{
   background: #f1f1f1 !important;
 }
 
+body.dark .main .sidebarWrapper .sidebar ul li button:hover{
+  background: rgba(255, 255, 255, 0.1) !important;
+}
+
 .main .sidebarWrapper .sidebar ul li button.active{
   background-color: #f1f1f1 !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul li button.active{
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .main .sidebarWrapper .sidebar ul li button.active .icon svg
@@ -460,6 +535,13 @@ button .btn-blue{
   left: 24px;
   background: rgba(0, 0, 0, 0.2 );
 }
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu::before{
+  background: rgba(255, 255, 255, 0.2) ;
+}
+
+
+
 .main .sidebarWrapper .sidebar ul .submenu li a{
   width: 100%;
   list-style: none;
@@ -469,12 +551,19 @@ button .btn-blue{
   display: block;
   padding: 6px 0px;
   font-weight: 500;
-  transition: all 0.3s;
-  
+  transition: all 0.3s; 
+}
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a{
+  color: rgba(255, 255, 255,  0.7) !important;
 }
 
 
 .main .sidebarWrapper .sidebar ul .submenu li a:hover{
+  color: #0858f7 !important;
+}
+
+body.dark .main .sidebarWrapper .sidebar ul .submenu li a:hover{
   color: #0858f7 !important;
 }
 
@@ -516,6 +605,13 @@ button .btn-blue{
   overflow: hidden;
   
 }
+
+body.dark .logoutWrapper .logoutBox{
+  
+  background: transparent;
+  background-image: linear-gradient(#183e8c,#163474);
+}
+
 
 .logoutWrapper .logoutBox::before{
   content: '';
@@ -739,6 +835,25 @@ button .btn-blue{
   color: #403e57;
 }
 
+body.dark .card{
+  margin: 20px;
+  margin-right: 15px ;
+  margin-left: 35px; 
+  border-radius: 10px;
+  background: #112143;
+}
+
+body.dark .card .hd{
+  font-size: 18px;
+  font-weight: bold;
+  color: rgba(255, 255, 255,  0.8);
+}
+
+body.dark .cardFilters .menu h4{
+  color: rgba(255, 255, 255,  0.8);
+}
+
+
 .cardFilters .menu h4{
   font-size: 14px;
   font-weight:700 ;
@@ -749,6 +864,25 @@ button .btn-blue{
 
 h1,h2,h3,h4,h5,h6,p {
   color: #403e57;
+}
+
+body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6,
+body.dark p,
+body.dark .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
+body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon, 
+body.dark .css-d551zc-MuiSvgIcon-root-MuiSelect-icon 
+  {
+  color: rgba(255, 255, 255,  0.8) !important;
+}
+
+body.dark .css-1ll44ll-MuiOutlinedInput-notchedOutline{
+  border-color: rgba(255, 255, 255, 0.3);
 }
 
 
@@ -791,6 +925,22 @@ h1,h2,h3,h4,h5,h6,p {
 
 .table tbody .actions button.error{
   background: rgba(241, 17 , 51, 0.2) !important;
+}
+
+body.dark .table tbody .actions button.secondary{
+  background: rgb(162, 34, 188) !important;
+}
+
+body.dark .table tbody .actions button.success{
+  background: rgb(15, 174, 84) !important;
+}
+
+body.dark .table tbody .actions button.error{
+  background: rgb(201, 11, 40) !important;
+}
+
+body.dark .actions svg{
+  color: #fff ;
 }
 
 .table td .old,.table td .new{
@@ -852,9 +1002,30 @@ table td .productBox{
   margin-bottom: 0px;
 }
 
+body.dark table td{
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
 .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected{
   background-color: #0858f7 !important;
 }
+
+
+body.dark .table-bordered td ,
+.table-bordered th {
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  background: #071739;
+}
+
+body.dark .css-1c5o7vy-MuiPagination-ul:hover{
+  color: #0648cc !important;
+}
+
+body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root{
+  color: rgba(255, 255, 255,  0.8) ;
+}
+
+
 
 /* -------Login Section ------*/
 

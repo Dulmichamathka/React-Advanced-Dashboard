@@ -286,9 +286,9 @@ const Dashboard = () => {
                   <td >$38k</td> 
                   <td ms-0>
                     <div className="actions d-flex align-items-center align">
-                        <Button className='secondary' color="secondary"><IoEyeSharp/></Button>
-                        <Button className='success' color="success"><FaPencil/></Button>
-                        <Button className='error ' color="error" ><MdDelete/></Button>
+                        <Button className='secondary dark' color="secondary"><IoEyeSharp/></Button>
+                        <Button className='success dark' color="success"><FaPencil/></Button>
+                        <Button className='error dark ' color="error" ><MdDelete/></Button>
                     </div>
                   </td>            
                 </tr> )
