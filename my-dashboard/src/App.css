@@ -229,9 +229,13 @@ body.dark .searchBox svg{
 
 .userImg .rounded-circle img {
   width: 100%;
-  
   object-fit: cover; /* Ensures the image does not distort */
   
+}
+
+.userImg.lg{
+  width: 55px !important;
+  height: 55px !important;
 }
 
 .myAcc .userInfo{
@@ -253,6 +257,7 @@ body.dark .MuiPaper-elevation li{
 
 .myAcc .userInfo h4{
   font-size: 15px;
+  line-height: 15px ;
   font-weight: 600;
   margin-bottom: 0px;
   color: #292929
@@ -866,6 +871,10 @@ h1,h2,h3,h4,h5,h6,p {
   color: #403e57;
 }
 
+h4{
+  line-height: 32px;
+}
+
 body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root.Mui-selected,
 body.dark h1,
 body.dark h2,
@@ -877,8 +886,20 @@ body.dark p,
 body.dark .css-sc8y68-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root,
 body.dark .css-lohd6h-MuiSvgIcon-root-MuiSelect-icon, 
 body.dark .css-d551zc-MuiSvgIcon-root-MuiSelect-icon 
-  {
+{
   color: rgba(255, 255, 255,  0.8) !important;
+}
+
+p{
+  font-weight: 300 ;
+  text-align: justify;
+  font-size: 15px;
+  line-height: 25px;
+}
+
+body.light p {
+  font-weight: 400 !important;
+  color: #767070;
 }
 
 body.dark .css-1ll44ll-MuiOutlinedInput-notchedOutline{
@@ -1023,6 +1044,10 @@ body.dark .css-1c5o7vy-MuiPagination-ul:hover{
 
 body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root{
   color: rgba(255, 255, 255,  0.8) ;
+}
+
+.slick-slide{
+  outline: none !important;
 }
 
 
@@ -1184,4 +1209,297 @@ body.dark .css-1bug3cd-MuiButtonBase-root-MuiPaginationItem-root{
 .signUpSection .part1 p{
   font-size: 18px;
   font-weight: 600;
+}
+
+
+/* ---products view -- */
+
+.card .second-slide  img{
+  width: 50px ;
+  height: 73px;
+  padding: 3px;
+  
+}
+
+.card .sliderWrapper{
+  padding-top: 12px !important;
+  padding-right: 3px !important;
+  padding-left: 20px !important;
+  padding-bottom: 10px !important;
+}
+
+.card .sideSliderWrapper {
+  padding-top: 12px !important;
+  padding-right: 3px !important;
+  padding-left: 20px !important;
+  padding-bottom: 10px !important;
+}
+
+.second-slide .slick-slide{
+  padding-right: 10px;
+}
+
+.first-slide *,.second-slide *{
+  transition: all 0.2s !important;
+}
+
+.first-slide .item{
+  overflow: hidden;
+  border-radius: 7px;
+  border: 2px dashed #ccc !important;
+}
+
+.second-slide .item{
+  overflow: hidden;
+  border-radius: 7px;
+  border: 2px dashed #ccc !important;
+  cursor: pointer;
+}
+
+.sliderWrapper .slick-slide img{
+  border-radius: 12px !important;
+  overflow: hidden;
+}
+
+body.dark .productDetailsSection .productInfo .side-content-left{
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.7;
+}
+
+.productDetailsSection .productInfo .side-content-left{
+  font-weight: 300;
+  color: #000000;
+  opacity: 0.7;
+}
+
+body.dark .productDetailsSection .productInfo .side-content-right{
+  font-weight: 300;
+  color: #fff;
+  opacity: 0.6;
+  font-size: 15px;
+ 
+}
+
+.productDetailsSection .productInfo .side-content-right{
+  font-weight: 300;
+  color: #000000;
+  opacity: 0.6;
+  font-size: 15px;
+ 
+}
+
+.productDetailsSection .productInfo .row .side-content-right{
+  display: flex;
+  align-items: center;
+}
+
+.productDetailsSection .productInfo .row .side-content-right span{
+  padding-left: 10px !important;
+}
+
+
+.productDetailsSection .productInfo .icon{
+  width: 28%;
+  flex: 0 0 28%;
+}
+
+.productDetailsSection .productInfo .icon svg{
+  font-size: 22px;
+}
+
+.productDetailsSection .productInfo .name{
+  width: 72%;
+  flex: 0 0 72%;
+  font-weight: bold !important;
+  font-size: 15px;
+}
+
+
+
+.productDetailsSection .productInfo .row{
+  margin-bottom: 10px !important;
+}
+
+.tags {
+  margin-bottom: 0px !important;
+}
+
+.tags li span{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1b2b4d !important;
+  border-radius: 5px !important;
+  font-size: 13px !important;
+  padding: 5px 9px; 
+}
+
+body.light .tags li span{
+  background: #f0f0f0 !important;
+  color: #000 !important;
+  padding: 4px 10px !important;
+}
+
+
+/* ---products view - Ratings area-- */
+
+.ratingSection {
+  width: 500px;
+}
+body.dark .ratingSection{
+  color: #fff;
+}
+
+.ratingSection .ratingrow{
+  width: 100%;
+  margin-bottom: 12px !important;
+}
+
+.ratingSection .ratingrow .progress{
+  height: 5px !important;
+  background-color: #000 !important;
+  
+}
+
+.ratingSection .ratingrow .progress .progress-bar{
+  background: #edb213 !important;
+}
+
+body.light .ratingSection .ratingrow .progress{
+  background: #ccc !important ;
+}
+
+
+
+.ratingSection .ratingrow .col1{
+  width: 15%;
+  flex: 0 0 15% ;
+}
+
+.ratingSection .ratingrow .col2{
+  width: 50%;
+  flex: 0 0 50% ;
+}
+
+.ratingSection .ratingrow .col3{
+  width: 25%;
+  flex: 0 0 25% ;
+  padding-left: 20px;
+}
+
+.container .ratingSectionOne{
+  padding-left: 140px;
+  width: 50%;
+ 
+}
+
+.container .ratingSectionOne h6{
+  margin-left: 0px !important;
+}
+
+.container .ratingSectionTwo {
+  width: 50%;
+  display: block;
+  text-align: center;
+  margin-right: 150px;
+}
+
+.container .ratingSectionTwo h1{
+  font-size: 70px;
+  font-weight: 700;
+}
+
+/* ---products view - Reviews-- */
+
+
+.reviewsSection{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.reviewsSection .reviewsRow{
+  width: 100%;
+  height: auto;
+  background: #071739;
+  padding: 35px;
+  border-radius: 10px;
+  margin: 15px 0px;
+}
+
+body.light .reviewsSection .reviewsRow{
+  background: #f8f8f8 !important;
+}
+.reviewsSection .reviewsRow .info h6{
+  color: #000;
+}
+body.light .reviewsSection .reviewsRow .info span{
+  color: #6d6666;
+}
+
+.reviewsSection .reviewsRow .info{
+  padding-left: 7px;
+  padding-top: 0px;
+  line-height: 6px;
+}
+
+body.dark .reviewsSection .reviewsRow .info span{
+  color: #d9d1d1;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+.reviewsSection .reviewsRow .info span{
+  color: #d9d1d1;
+  font-weight: 200;
+  font-size: 13px;
+}
+
+body .reviewsSection .reviewsRow .userInfo Button {
+  padding: 10px 18px 10px 2px!important;
+  font-size: 12px !important;
+}
+
+
+
+.userInfo Button svg{
+  font-size: 25px !important;
+  margin-right: 3px;
+}
+
+body .reply-form h6{
+  margin: 35px 0px !important;
+}
+
+.reviewReplyForm {
+  width: 100%;
+}
+
+.reviewReplyForm textarea{
+  width: 100%;
+  height: 200px;
+  background:#1a2949 !important;
+  outline: navajowhite !important;
+  padding: 15px;
+  margin:15px 0px;
+  border-radius: 10px;
+  color: rgba(255, 255, 255,  0.7);
+  border: 1px solid #132345 !important;
+}
+
+body.light .reviewReplyForm textarea{
+  background: #ededed !important;
+  color: rgba(0, 0, 0, 0.8);
+  border: 1px solid #dbdbdb !important;
+}
+
+
+.reviewReplyForm textarea ::-webkit-input-placeholder {
+  color: rgba(255, 255, 255,  0.5);
+}
+
+body.light .reviewReplyForm textarea ::-webkit-input-placeholder{
+  color: rgba(0, 0, 0, 0.5);
 }

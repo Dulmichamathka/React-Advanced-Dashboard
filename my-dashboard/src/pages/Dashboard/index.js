@@ -27,6 +27,7 @@ import blouse from "../../assets/images/blouse.png";
 import blousejacket from "../../assets/images/blousejacket.png";
 import Pagination from '@mui/material/Pagination';
 import { MyContext } from '../../App';
+import { Link } from "react-router-dom";
 
 export const data = [
   ["Year", "Sales", "Expenses"],
@@ -286,7 +287,11 @@ const Dashboard = () => {
                   <td >$38k</td> 
                   <td ms-0>
                     <div className="actions d-flex align-items-center align">
-                        <Button className='secondary dark' color="secondary"><IoEyeSharp/></Button>
+                      
+                        <Link to = '/product/details'>
+                            <Button className='secondary dark' color="secondary"><IoEyeSharp/></Button>
+                        </Link>
+                        
                         <Button className='success dark' color="success"><FaPencil/></Button>
                         <Button className='error dark ' color="error" ><MdDelete/></Button>
                     </div>

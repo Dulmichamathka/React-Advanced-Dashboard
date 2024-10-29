@@ -21,6 +21,7 @@ import Divider from '@mui/material/Divider';
 import Logout from '@mui/icons-material/Logout';
 import { FaShieldAlt } from "react-icons/fa";
 import { MyContext } from "../../../App";
+import UserAvatarImgComponent from "../components/userAvatarImg";
 
 
 
@@ -131,11 +132,7 @@ const Header = () => {
                        <MenuItem onClick={handleClosenotificationsDrop}>
                               <div className=" d-flex align-items-center ">
                                 <div>
-                                      <div className="userImg">
-                                            <span className="rounded-circle">
-                                                    <img src={profile} alt="" />
-                                              </span>  
-                                        </div>
+                                    <UserAvatarImgComponent img={profile}/>
                                 </div> 
 
                                 <div className="dropdownInfo">
@@ -386,11 +383,7 @@ const Header = () => {
               <div className="myAccWrapper">
                  <Button className="myAcc d-flex align-items-center " onClick={handleOpenMyAccDrop}>
                     <div>
-                        <div className="userImg">
-                          <span className="rounded-circle">
-                              <img src={profile} alt="Profile" />
-                          </span>
-                        </div>
+                         <UserAvatarImgComponent img={profile}/>
                     </div>
 
                  <div className="userInfo">

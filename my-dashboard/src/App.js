@@ -7,6 +7,7 @@ import Sidebar from './components/SearchBox/Sidebar';
 import { createContext, useEffect, useState } from 'react';
 import Login from './pages/Login';
 import SignUp from './pages/SignUp';
+import ProductDetails from './pages/ProductDetails';
 
 
 const MyContext = createContext();
@@ -15,7 +16,7 @@ function App() {
 
 
 const [isToggleSidebar,setIsToggleSidebar] = useState(false);
-const [isLogin,setIsLogin] = useState(true);
+const [isLogin,setIsLogin] = useState(false);
 const [isHideSidebarAndHeader,setIsHideSidebarAndHeader] = useState(false);
 const [themeMode,setThemeMode] = useState(true);
 
@@ -76,6 +77,8 @@ const values = {
               <Route path='/dashboard' exact={true} element = {<Dashboard/>}/>
               <Route path='/login' exact={true} element = {<Login/>}/>
               <Route path='/signUp' exact={true} element = {<SignUp/>}/>
+              <Route path='/product/details' exact={true} element = {<ProductDetails/>}/>
+              
           </Routes>
       </div>
       </div>
