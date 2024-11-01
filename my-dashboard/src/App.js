@@ -1,43 +1,55 @@
-import {BrowserRouter,Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
-import Dashboard from './pages/Dashboard';
-import Header from './pages/Dashboard/Header';
-import Sidebar from './components/SearchBox/Sidebar';
-import { createContext, useEffect, useState } from 'react';
-import Login from './pages/Login';
-import SignUp from './pages/SignUp';
-import ProductDetails from './pages/ProductDetails';
-import ProductUpload from './pages/ProductUpload';
-
+import "./App.css";
+import "./responsive.css";
+import Dashboard from "./pages/Dashboard";
+import Header from "./pages/Dashboard/Header";
+import Sidebar from "./components/SearchBox/Sidebar";
+import { createContext, useEffect, useState } from "react";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import ProductDetails from "./pages/ProductDetails";
+import ProductUpload from "./pages/ProductUpload";
 
 const MyContext = createContext();
 
 function App() {
+  const [isToggleSidebar, setIsToggleSidebar] = useState(false);
+  const [isLogin, setIsLogin] = useState(false);
+  const [isHideSidebarAndHeader, setIsHideSidebarAndHeader] = useState(false);
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [isOpenNav, setIsOpenNav] = useState(false);
+  const [themeMode, setThemeMode] = useState(true);
 
+  useEffect(() => {
+    if (themeMode === true) {
+      document.body.classList.remove("dark");
+      document.body.classList.add("light");
+      localStorage.setItem("themeMode", "light");
+    } else {
+      document.body.classList.remove("light");
+      document.body.classList.add("dark");
+      localStorage.setItem("themeMode", "dark");
+    }
+  }, [themeMode]);
 
-const [isToggleSidebar,setIsToggleSidebar] = useState(false);
-const [isLogin,setIsLogin] = useState(false);
-const [isHideSidebarAndHeader,setIsHideSidebarAndHeader] = useState(false);
-const [themeMode,setThemeMode] = useState(true);
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
 
-useEffect(() =>{ 
-  if (themeMode === true){
-    document.body.classList.remove('dark');
-    document.body.classList.add('light'); 
-    localStorage.setItem('themeMode', 'light');
-  }
-  else{
-    document.body.classList.remove('light');
-    document.body.classList.add('dark'); 
-    localStorage.setItem('themeMode','dark');
-  }
+    window.addEventListener("resize", handleResize);
 
-},[themeMode])
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
+  const openNav = () => {
+    setIsOpenNav(true);
+  };
 
-
-const values = {
+  const values = {
     isToggleSidebar,
     setIsToggleSidebar,
     isLogin,
@@ -45,45 +57,63 @@ const values = {
     isHideSidebarAndHeader,
     setIsHideSidebarAndHeader,
     themeMode,
-    setThemeMode
-}
-
-
+    setThemeMode,
+    windowWidth,
+    setWindowWidth,
+    openNav,
+    isOpenNav,
+    setIsOpenNav,
+  };
 
   return (
     <BrowserRouter>
-    <MyContext.Provider value={values}>
+      <MyContext.Provider value={values}>
+        {isHideSidebarAndHeader !== true && <Header />}
 
-      {
-        isHideSidebarAndHeader !== true && 
-      <Header/>
+        <div className="main d-flex w-100">
+          {isHideSidebarAndHeader !== true && (
+            <>
+              <div
+                className={`sidebarOverlay d-none  ${
+                  isOpenNav === true ? "show" : ""
+                }`}
+                onClick={() => setIsOpenNav(false)}
+              ></div>
 
-       }
+              <div
+                className={`sidebarWrapper ${
+                  isToggleSidebar === true ? "toggle" : ""
+                } 
+                ${isOpenNav === true ? "open" : ""} `}
+              >
+                <Sidebar />
+              </div>
+            </>
+          )}
 
-      <div className="main d-flex w-100">
-        {
-          isHideSidebarAndHeader !== true && 
-
-          <div className={`sidebarWrapper ${isToggleSidebar === true ? 'toggle' : '' }`}>
-            <Sidebar />
-          </div>  
-        }
-          
-      
-      
-      <div className={`content ${isHideSidebarAndHeader ? 'full' : ''} ${isToggleSidebar ? 'toggle' : ''}`}>
-
-          <Routes>
-              <Route path='/' exact={true} element = {<Dashboard/>}/>
-              <Route path='/dashboard' exact={true} element = {<Dashboard/>}/>
-              <Route path='/login' exact={true} element = {<Login/>}/>
-              <Route path='/signUp' exact={true} element = {<SignUp/>}/>
-              <Route path='/product/details' exact={true} element = {<ProductDetails/>}/>
-              <Route path='/product/upload' exact={true} element = {<ProductUpload/>}/>
-              
-          </Routes>
-      </div>
-      </div>
+          <div
+            className={`content ${isHideSidebarAndHeader ? "full" : ""} ${
+              isToggleSidebar ? "toggle" : ""
+            }`}
+          >
+            <Routes>
+              <Route path="/" exact={true} element={<Dashboard />} />
+              <Route path="/dashboard" exact={true} element={<Dashboard />} />
+              <Route path="/login" exact={true} element={<Login />} />
+              <Route path="/signUp" exact={true} element={<SignUp />} />
+              <Route
+                path="/product/details"
+                exact={true}
+                element={<ProductDetails />}
+              />
+              <Route
+                path="/product/upload"
+                exact={true}
+                element={<ProductUpload />}
+              />
+            </Routes>
+          </div>
+        </div>
       </MyContext.Provider>
     </BrowserRouter>
   );
@@ -91,4 +121,4 @@ const values = {
 
 export default App;
 
-export {MyContext}
+export { MyContext };

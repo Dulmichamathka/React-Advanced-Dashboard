@@ -102,14 +102,11 @@ header .row {
   margin: 0px !important;
 }
 
-header span {
-  margin-left: 4px;
-}
-
 header .logo span {
   color: #2d2929;
   font-weight: 800;
   font-size: 30px;
+  margin-left: 4px;
 }
 
 body.dark header .logo span {
@@ -777,10 +774,9 @@ body.dark .logoutWrapper .logoutBox {
 }
 
 .card {
-  margin: 20px;
-  margin-right: 15px;
-  margin-left: 35px;
-
+  margin: 20px !important;
+  margin-right: 15px !important ;
+  margin-left: 35px !important;
   border-radius: 10px;
 }
 
@@ -1467,4 +1463,121 @@ body.dark .form .row .selector {
 
 body.dark .row .css-1ckov0h-MuiSvgIcon-root {
   color: #f6b621;
+}
+
+/*
+.imgUploadBox .uploadBox img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.imgUploadBox .uploadBox input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.imgUploadBox .uploadBox .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.imgUploadBox .uploadBox .info svg {
+  font-size: 50px;
+  opacity: 0.2;
+}
+
+.imgUploadBox .uploadBox .info h5 {
+  font-size: 15px;
+  text-align: center;
+  opacity: 0.5;
+}/*
+
+
+.imgUploadBox {
+  display: flex;
+  gap: 10px; /* Adds space between each box 
+}*/
+
+.uploadBox {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  cursor: pointer;
+  margin-right: 20px;
+  border-radius: 10px;
+}
+
+body.dark .uploadBox {
+  background: #1b2b4d !important;
+}
+
+.uploadBox .remove {
+  position: absolute;
+  top: -18px; /* Adjust positioning to make it look like in the image */
+  right: -8px;
+  color: red;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.uploadBox .box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadBox img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.uploadBox input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.uploadBox .info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  pointer-events: none;
+}
+
+.uploadBox .info svg {
+  font-size: 40px;
+  opacity: 0.4;
+}
+
+body.dark .uploadBox .info svg {
+  color: #c6b9b9;
+}
+
+.uploadBox .info h5 {
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.6;
+}
+
+.form .upload {
+  margin-right: 50px;
+  margin-left: 1px;
 }

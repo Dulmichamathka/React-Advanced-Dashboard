@@ -5,11 +5,16 @@ import HomeIcon from "@mui/icons-material/Home";
 import { emphasize, styled } from "@mui/material/styles";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormHelperText from "@mui/material/FormHelperText";
-import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
 import { useState } from "react";
 import Rating from "@mui/material/Rating";
+import { FaCloudUploadAlt } from "react-icons/fa";
+import Button from "@mui/material/Button";
+import { IoCloseCircle } from "react-icons/io5";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+import oneRedShirt from "../../assets/images/oneRedShirt.jpg";
+import { FaImages } from "react-icons/fa";
 
 // Breadcrumb code
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
@@ -44,7 +49,11 @@ const ProductUpload = () => {
   return (
     <>
       <div className="right-content w-100">
-        <div className="card shadow border-0 w-100 flex-row p-4">
+        <div
+          className="card shadow border-0 w-100 flex-row p-4 res-col {
+    flex-direction: column !important ;
+  }"
+        >
           <h5 className="mb-0">Product Upload</h5>
           <Breadcrumbs
             aria-label="breadcrumb"
@@ -63,11 +72,11 @@ const ProductUpload = () => {
 
         <form className="form">
           <div className="row">
-            <div className="col-sm-7 ">
+            <div>
               <div className="card p-4">
                 <h5 className="mb-4">Basic Information</h5>
                 <div className="form-group">
-                  <h6>TITLE</h6>
+                  <h6>PRODUCT NAME</h6>
                   <input type="text" />
                 </div>
                 <div className="form-group">
@@ -155,10 +164,43 @@ const ProductUpload = () => {
                   </div>
                 </div>
               </div>
+
               {/*
               <div className="col-sm-5">
                 <div className="card"></div>
               </div> */}
+
+              <div className="row upload">
+                <div className="card p-4 mt-0">
+                  <div className="imagesUploadSec">
+                    <h5 className="mb-4">Media And Published</h5>
+
+                    <div className="imgUploadBox d-flex align-items-center">
+                      <div className="uploadBox">
+                        <span className="remove">
+                          <IoCloseCircle />
+                        </span>
+                        <div className="box">
+                          <LazyLoadImage height="blur" src={oneRedShirt} />
+                        </div>
+                      </div>
+
+                      <div className="uploadBox">
+                        <input type="file" multiple name="images" />
+                        <div className="info">
+                          <FaImages />
+                          <h5>image upload</h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br />
+
+                  <Button className="btn-blue btn-lg btn-big">
+                    <FaCloudUploadAlt /> &nbsp; PUBLISH AND VIEW
+                  </Button>
+                </div>
+              </div>
             </div>
           </div>
         </form>
